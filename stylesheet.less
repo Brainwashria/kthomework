@@ -1,0 +1,287 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #F7FAFD;
+  height: 100%;
+}
+
+header {
+  background: #F7FAFD;
+  box-shadow: 35px 28px 32px #D2D8E4;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: space-between;
+
+  .logo {
+    margin: 20px;
+    flex-basis: 20%;
+    background-image: url("img/pictures/logoms.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 180px;
+    width: 180px;
+  }
+
+  .center {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 60%;
+
+    form {
+      width: 100%;
+      position: relative;
+      margin: 10px 0 30px 0;
+    }
+    input, button {
+      outline: none;
+      background: transparent;
+    }
+    input {
+      width: 100%;
+      height: 42px;
+      padding-left: 15px;
+      border: 3px solid #CFCDFF;
+      border-radius: 15px;
+    }
+    button {
+      border: none;
+      height: 42px;
+      width: 42px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+    }
+    button:before {
+      content: "\f002";
+      font-family: FontAwesome;
+      font-size: 16px;
+      color: #F9F0DA;
+    }
+    input:focus {
+      border-color: #7D288B;
+    }
+    .updates {
+     display: flex;
+      justify-content: space-between;
+
+    .updatesPhotos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+      height: 160px;
+      border-radius: 15%;
+      p {
+        color: white;
+        font-size: 20px;
+      }
+
+      .someContrast {
+        color: black;
+      }
+    }
+
+    .user1 {
+      background-image: url("img/pictures/001.png");
+      background-size: contain;
+
+    }
+
+    .user2 {
+      background-image: url("img/pictures/002.png");
+      background-size: cover;
+
+
+    }
+
+    .user3 {
+      background-image: url("img/pictures/003.png");
+      background-size: cover;
+
+
+    }
+  }
+}
+  .userCorner {
+    margin: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-basis: 20%;
+    .userAvatar {
+      position: relative;
+      background-image: url("img/icons/user 1.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      border-radius: 100%;
+      width: 150px;
+      height: 150px;
+      img {
+        position: absolute;
+        bottom: 0;
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}
+.feed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 auto;
+  flex-direction: column;
+  min-height: 100%;
+  .menu {
+    position: fixed;
+    top: 310px;
+    right: 20px;
+    .menuList {
+      list-style-type: none;
+        li {
+          a {
+            img {
+              height: 40px;
+              width: 40px;
+            }
+          }
+        }
+    }
+
+  }
+  .publication {
+    background: #F7FAFD;
+    box-shadow: 35px 28px 32px #D2D8E4, -32px -40px 57px #FFFFFF;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    min-height: 500px;
+    margin: 50px 0 50px 0;
+    .user {
+      margin: 3% 0 0 3%;
+      display: flex;
+      .userName {
+        color: #242045;
+        align-self: center;
+        font-size: 25px;
+      }
+      .avatar {
+        background-image: url("img/pictures/useravatar.png");
+        background-size: cover;
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+      }
+    }
+    .pictureBox {
+      padding: 30px;
+      display: flex;
+      .picture {
+        display: flex;
+
+        .picturePhoto {
+          margin: auto;
+          width: 70%;
+          height: 100%;
+          border-radius: 15px;
+        }
+      }
+      .multiple {
+        ul {
+          list-style-type: none;
+          li {
+            margin-bottom: 15px;
+            .active {
+              width: 30px;
+            }
+            .ellipse {
+              width: 25px;
+            }
+          }
+        }
+      }
+    }
+    .description {
+      width: 65%;
+      align-self: center;
+      .userNameDescription {
+        font-size: 20px;
+      }
+      .textDescription {
+        font-size: 20px;
+      }
+    }
+    .actionsContainer {
+      display: flex;
+      justify-content: space-between;
+      width: 65%;
+      align-self: center;
+      .likes {
+
+        .likeButton {
+          background-color: transparent;
+          background-image: url("img/icons/favorite_border_24px.svg");
+          width: 35px;
+          height: 35px;
+          border: 0;
+        }
+      }
+      .actions {
+        .sendButton {
+          background-image: url("img/icons/sendbutton.svg");
+          width: 35px;
+          height: 35px;
+          background-color: transparent;
+          border: 0;
+        }
+        .bookmark {
+          background-image: url("img/icons/bookmark.svg");
+          background-repeat: no-repeat;
+          width: 35px;
+          height: 35px;
+          background-color: transparent;
+          border: 0;
+        }
+      }
+    }
+    .commentSection {
+      width: 65%;
+      align-self:center;
+.commentsButton {
+  background-image: url("img/icons/comments.svg");
+  width: 35px;
+  height: 35px;
+  background-size: contain;
+  background-color: transparent;
+  border: 0;
+
+}
+    }
+  }
+}
+
+
+
+footer {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  background-color: #CFCDFF;
+  border-radius: 0 120px 0 0;
+  height: 200px;
+  .linksList {
+    display: flex;
+    list-style-type: none;
+    .links {
+      margin-left: 200px;
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+    }
+  }
+}
