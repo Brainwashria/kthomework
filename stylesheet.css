@@ -4,18 +4,116 @@
 }
 html,
 body {
-  background-color: #F7FAFD;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ECF0F3;
   height: 100%;
 }
-header {
-  background: #F7FAFD;
-  box-shadow: 35px 28px 32px #D2D8E4;
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+body .openedPostDiv {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 300px;
+  height: 100%;
+  background-color: rgba(53, 48, 65, 0.42);
+}
+body .openedPostDiv .openedPost {
+  padding: 20px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 2fr;
+  background: #F7FAFD;
+  width: 70%;
+  position: fixed;
+  height: content-box;
+  box-shadow: 23px 31px 66px #88828D;
+  border-radius: 25px;
+}
+body .openedPostDiv .openedPost .photoAndActionsContainer .actionsContainer {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  align-self: center;
 }
-header .logo {
+body .openedPostDiv .openedPost .photoAndActionsContainer .actionsContainer .likes .likeButton {
+  background-color: transparent;
+  background-image: url("img/icons/favorite_border_24px.svg");
+  width: 35px;
+  height: 35px;
+  border: 0;
+}
+body .openedPostDiv .openedPost .photoAndActionsContainer .actionsContainer .actions .sendButton {
+  background-image: url("img/icons/sendbutton.svg");
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border: 0;
+}
+body .openedPostDiv .openedPost .photoAndActionsContainer .actionsContainer .actions .bookmark {
+  background-image: url("img/icons/bookmark.svg");
+  background-repeat: no-repeat;
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border: 0;
+}
+body .openedPostDiv .openedPost .descriptionAndComments {
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+}
+body .openedPostDiv .openedPost .descriptionAndComments .commentsSection h1 {
+  color: #7D288B;
+  font-size: 30px;
+}
+body .openedPostDiv .openedPost .descriptionAndComments .commentsSection form {
+  border-radius: 5px;
+  border: 2px solid #B5B5D5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .openedPostDiv .openedPost .descriptionAndComments .commentsSection form textarea {
+  font-size: 15px;
+  resize: none;
+  height: 40%;
+  width: 70%;
+  background: transparent;
+  border: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+body .openedPostDiv .openedPost .descriptionAndComments .commentsSection form .send {
+  font-weight: bold;
+  font-size: 12px;
+  align-self: flex-start;
+  border: 0;
+  background: transparent;
+}
+body .openedPostDiv .openedPost .descriptionAndComments .usersDescription .user {
+  display: flex;
+  align-items: center;
+}
+body .openedPostDiv .openedPost .descriptionAndComments .usersDescription .user .avatar {
+  background-image: url("img/icons/user 1.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+.headerFeed {
+  width: 100%;
+  height: 300px;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+}
+.headerFeed .logo {
   margin: 20px;
   flex-basis: 20%;
   background-image: url("img/pictures/logoms.png");
@@ -24,29 +122,30 @@ header .logo {
   height: 180px;
   width: 180px;
 }
-header .center {
+.headerFeed .center {
   display: flex;
   flex-direction: column;
   flex-basis: 60%;
 }
-header .center form {
+.headerFeed .center form {
   width: 100%;
   position: relative;
   margin: 10px 0 30px 0;
 }
-header .center input,
-header .center button {
+.headerFeed .center input,
+.headerFeed .center button {
   outline: none;
   background: transparent;
 }
-header .center input {
+.headerFeed .center input {
   width: 100%;
   height: 42px;
   padding-left: 15px;
   border: 3px solid #CFCDFF;
   border-radius: 15px;
+  box-sizing: border-box;
 }
-header .center button {
+.headerFeed .center button {
   border: none;
   height: 42px;
   width: 42px;
@@ -55,53 +154,59 @@ header .center button {
   right: 0;
   cursor: pointer;
 }
-header .center button:before {
+.headerFeed .center button:before {
   content: "\f002";
-  font-family: FontAwesome;
   font-size: 16px;
   color: #F9F0DA;
 }
-header .center input:focus {
+.headerFeed .center input:focus {
   border-color: #7D288B;
 }
-header .center .updates {
+.headerFeed .center .updates {
   display: flex;
   justify-content: space-between;
 }
-header .center .updates .updatesPhotos {
+.headerFeed .center .updates .updatesPhotos {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 250px;
-  height: 160px;
-  border-radius: 15%;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  border: 2px;
+  border-image: linear-gradient(90deg, #CFCDFF 19.83%, #7C288B 88.27%);
 }
-header .center .updates .updatesPhotos p {
+.headerFeed .center .updates .updatesPhotos p {
   color: white;
-  font-size: 20px;
+  font-size: 15px;
 }
-header .center .updates .updatesPhotos .someContrast {
-  color: black;
-}
-header .center .updates .user1 {
+.headerFeed .center .updates .user1 {
   background-image: url("img/pictures/001.png");
-  background-size: contain;
+  background-size: cover;
 }
-header .center .updates .user2 {
+.headerFeed .center .updates .user2 {
   background-image: url("img/pictures/002.png");
   background-size: cover;
 }
-header .center .updates .user3 {
+.headerFeed .center .updates .user3 {
   background-image: url("img/pictures/003.png");
   background-size: cover;
 }
-header .userCorner {
+.headerFeed .center .updates .user4 {
+  background-image: url("img/pictures/004.jpg");
+  background-size: cover;
+}
+.headerFeed .center .updates .user5 {
+  background-image: url("img/pictures/005.jpg");
+  background-size: cover;
+}
+.headerFeed .userCorner {
   margin: 20px;
   display: flex;
   flex-direction: row-reverse;
   flex-basis: 20%;
 }
-header .userCorner .userAvatar {
+.headerFeed .userCorner .userAvatar {
   position: relative;
   background-image: url("img/icons/user 1.svg");
   background-size: contain;
@@ -110,19 +215,15 @@ header .userCorner .userAvatar {
   width: 150px;
   height: 150px;
 }
-header .userCorner .userAvatar img {
+.headerFeed .userCorner .userAvatar .iconPlus {
   position: absolute;
   bottom: 0;
   width: 60px;
   height: 60px;
 }
 .feed {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1 0 auto;
-  flex-direction: column;
-  min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
 }
 .feed .menu {
   position: fixed;
@@ -137,18 +238,17 @@ header .userCorner .userAvatar img {
   width: 40px;
 }
 .feed .publication {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 100px;
   background: #F7FAFD;
   box-shadow: 35px 28px 32px #D2D8E4, -32px -40px 57px #FFFFFF;
   border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  min-height: 500px;
-  margin: 50px 0 50px 0;
 }
 .feed .publication .user {
-  margin: 3% 0 0 3%;
   display: flex;
+  margin: 3% 0 0 3%;
 }
 .feed .publication .user .userName {
   color: #242045;
@@ -163,8 +263,8 @@ header .userCorner .userAvatar img {
   margin-right: 20px;
 }
 .feed .publication .pictureBox {
-  padding: 30px;
   display: flex;
+  padding: 30px;
 }
 .feed .publication .pictureBox .picture {
   display: flex;
@@ -190,12 +290,14 @@ header .userCorner .userAvatar img {
 .feed .publication .description {
   width: 65%;
   align-self: center;
+  margin: 10px;
 }
 .feed .publication .description .userNameDescription {
   font-size: 20px;
 }
 .feed .publication .description .textDescription {
-  font-size: 20px;
+  font-weight: 300;
+  font-size: 18px;
 }
 .feed .publication .actionsContainer {
   display: flex;
@@ -226,8 +328,9 @@ header .userCorner .userAvatar img {
   border: 0;
 }
 .feed .publication .commentSection {
-  width: 65%;
+  margin-bottom: 20px;
   align-self: center;
+  width: 65%;
 }
 .feed .publication .commentSection .commentsButton {
   background-image: url("img/icons/comments.svg");
@@ -254,5 +357,175 @@ footer .linksList .links {
   text-decoration: none;
   color: white;
   font-size: 20px;
+}
+.personalPageHeader {
+  height: max-content;
+  padding: 2%;
+  display: grid;
+  grid-template-columns: 2fr 2fr 3fr;
+}
+.personalPageHeader .leftColumn {
+  justify-self: center;
+}
+.personalPageHeader .leftColumn .userDiv .userPicture {
+  background-image: url("img/icons/user 1.svg");
+  background-size: contain;
+  width: 180px;
+  height: 180px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.personalPageHeader .leftColumn .userDiv .userPicture .plusIcon {
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+  height: 60px;
+}
+.personalPageHeader .leftColumn .uploadPhoto {
+  margin: 20% 0 10% 0;
+  color: white;
+  font-size: 15px;
+  width: 169px;
+  height: 38px;
+  background: linear-gradient(90deg, #CFCDFF 19.83%, #7C288B 88.27%);
+  border-radius: 20px;
+}
+.personalPageHeader .leftColumn .userList {
+  width: 100%;
+  list-style-type: none;
+}
+.personalPageHeader .leftColumn .userList .userListPoints {
+  width: 100%;
+}
+.personalPageHeader .leftColumn .userList .userListPoints .userLinks {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+}
+.personalPageHeader .leftColumn .userList .userListPoints .userLinks .titleList {
+  color: #7D288B;
+}
+.personalPageHeader .leftColumn .userList .userListPoints .userLinks .numbersList {
+  color: #979797;
+}
+.personalPageHeader .centralColumn {
+  display: grid;
+  grid-template-rows: 0.5fr 2fr 2fr;
+}
+.personalPageHeader .centralColumn .nickname {
+  color: #7D288B;
+}
+.personalPageHeader .centralColumn .descriptionAndSettings {
+  display: flex;
+}
+.personalPageHeader .centralColumn .descriptionAndSettings .settingsIcon {
+  background-color: transparent;
+  border: none;
+}
+.personalPageHeader .centralColumn .descriptionAndSettings .settingsIcon .settingsImg {
+  width: 45px;
+  height: 45px;
+}
+.personalPageHeader .rightColumn {
+  justify-self: end;
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+.personalPageHeader .rightColumn .logoImage {
+  background-image: url("img/pictures/logoms.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 180px;
+  height: 180px;
+}
+.personalPageHeader .rightColumn .iconsMenu .menuList {
+  list-style-type: none;
+}
+.personalPageHeader .rightColumn .iconsMenu .menuList .menuLi {
+  line-height: 25px;
+}
+.personalPageHeader .rightColumn .iconsMenu .menuList .menuLi .icons {
+  width: 40px;
+  height: 40px;
+}
+.navigation {
+  border-bottom: 2px solid #CFCDFF;
+  display: flex;
+  justify-content: space-around;
+}
+.navigation .navigationLinks {
+  border-bottom: 2px solid #7D288B;
+  width: 10%;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+}
+.galleryContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.galleryContainer .gallery {
+  width: 70%;
+  margin: 3% 0 5% 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27%, 1fr));
+  grid-gap: 1rem;
+}
+.galleryContainer .gallery .post {
+  width: 100%;
+  height: 100%;
+}
+.galleryContainer .gallery .post .postLink img {
+  width: 100%;
+  height: 100%;
+}
+.publicationPage {
+  margin-bottom: 5%;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+.publicationPage .firstColumn {
+  justify-self: center;
+}
+.publicationPage .firstColumn .postContainer .headerOfPost {
+  margin: 3% 0 3% 0;
+}
+.publicationPage .firstColumn .postContainer .headerOfPost .userHeader {
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.publicationPage .firstColumn .postContainer .headerOfPost .userHeader .userNickname {
+  color: #7C288B;
+}
+.publicationPage .firstColumn .postContainer .headerOfPost .userHeader .avatar {
+  background-image: url("img/icons/user 1.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+}
+.publicationPage .firstColumn .postContainer .postBody .pictureOfThePost .postImage {
+  border-radius: 15px;
+}
+.publicationPage .secondColumn {
+  display: flex;
+  justify-self: end;
+  margin: 5% 5% 0 0;
+}
+.publicationPage .secondColumn .logo {
+  background-image: url("img/pictures/logoms.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 160px;
+  height: 160px;
+}
+.publicationPage .secondColumn .menu .menuList {
+  list-style-type: none;
 }
 /*# sourceMappingURL=stylesheet.css.map */

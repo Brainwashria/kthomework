@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,500,500i,700,900&display=swap&subset=cyrillic" rel="stylesheet">
+  <link rel='stylesheet' href="stylesheet.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="script.js"></script>
+</head>
+<body>
+<header class="personalPageHeader">
+<div class="leftColumn">
+  <div class="userDiv">
+    <div class="userPicture">
+      <img src="img/icons/iconplus.svg" alt="iconPlus" class="plusIcon">
+    </div>
+  </div>
+  <button class="uploadPhoto">upload photo</button>
+  <ul class="userList">
+    <li class="userListPoints">
+      <a href="#" class="userLinks userFollowers"><span class="titleList">Followers</span><span class="numbersList">234</span></a>
+    </li>
+    <li class="userListPoints">
+      <a href="#" class="userLinks userFollowing"><span class="titleList">Following</span><span class="numbersList">0</span></a>
+    </li>
+    <li class="userListPoints">
+      <a href="#" class="userLinks usersPost"><span class="titleList">Posts</span><span class="numbersList">101</span></a>
+    </li>
+  </ul>
+</div>
+  <div class="centralColumn">
+    <h2 class="nickname">Who-Must-Not-Be-Named</h2>
+    <div class="descriptionAndSettings">
+      <div class="userDescription">
+        <p class="textOfDescription"> I can make things move without touching them. I can make animals do what I want them to do without
+          training them. I can make bad things happen to people who annoy me. I can make them hurt if I want.</p>
+      </div>
+      <button class="settingsIcon"><img src="img/icons/settingsicon.svg" alt="icon" class="settingsImg"></button>
+    </div>
+    <div class="iconsListLinks">
+      <a href="#" class="socialMedia"><img src="img/icons/facebook.svg" alt="facebook" class="socialMediaIcons"></a>
+      <a href="#" class="socialMedia"><img src="img/icons/instagram.svg" alt="instagram" class="socialMediaIcons"></a>
+      <a href="#" class="socialMedia"><img src="img/icons/twitter.svg" alt="twitter" class="socialMediaIcons"></a>
+      <a href="#" class="socialMedia"><img src="img/icons/dribbble.svg" alt="dribble" class="socialMediaIcons"></a>
+      <a href="#" class="socialMedia"><img src="img/icons/behance.svg" alt="behance" class="socialMediaIcons"></a>
+      <a href="#" class="socialMedia"><img src="img/icons/github.svg" alt="github" class="socialMediaIcons"></a>
+    </div>
+  </div>
+  <div class="rightColumn">
+    <div class="logoImage"></div>
+    <div class="iconsMenu">
+      <ul class="menuList">
+        <li class="menuLi">
+          <a href="#" class="menuLinks">
+            <img src="img/icons/bell.svg" alt="bell" class="icons">
+          </a>
+        </li>
+        <li class="menuLi">
+          <a href="#">
+            <img src="img/icons/mail.svg" alt="mail" class="icons">
+          </a>
+        </li>
+        <li class="menuLi">
+          <a href="#">
+            <img src="img/icons/trending_up_24px.svg" alt="statistics" class="icons">
+          </a>
+        </li>
+        <li class="menuLi">
+          <a href="#">
+            <img src="img/icons/cloud_queue_24px.svg" alt="cloud" class="icons">
+          </a>
+        </li>
+        <li class="menuLi">
+          <a href="#">
+            <img src="img/icons/bookmarks_24px.svg" alt="bookmarks" class="icons">
+          </a>
+        </li>
+        <li class="menuLi">
+          <a href="#">
+            <img src="img/icons/gear%201.svg" alt="settings" class="icons">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+<div class="visible openedPostDiv">
+    <div class="openedPost">
+      <div class="photoAndActionsContainer">
+        <div class="photoDiv">
+          <img src="img/pictures/first.jpg" alt="first">
+        </div>
+        <div class="actionsContainer">
+          <div class="likes">
+            <button class="likeButton"></button>
+          </div>
+          <div class="actions">
+            <button class="bookmark"></button>
+            <button class="sendButton"></button>
+          </div>
+        </div>
+        </div>
+      <div class="descriptionAndComments">
+        <div class="usersDescription">
+          <div class="user">
+            <div class="avatar"></div>
+            <span class="userName">Who-Must-Not-Be-Named</span>
+          </div>
+          <div class="userDescription">
+            <p>Oh hi</p>
+          </div>
+        </div>
+        <div class="commentsSection">
+          <h1>Comments</h1>
+          <div class="allComments"></div>
+          <form class="comments">
+            <textarea placeholder="Add a comment"></textarea>
+            <button class="send">Send</button>
+          </form>
+
+        </div>
+      </div>
+      </div>
+
+    </div>
+</div>
+<nav class="navigation">
+  <a class="navigationLinks">
+    <img src="img/icons/photos.svg" alt="photos">
+    <span>Photo</span>
+  </a>
+  <a class="navigationLinks">
+    <img src="img/icons/video.svg" alt="video">
+    <span>Video</span>
+  </a>
+  <a class="navigationLinks">
+    <img src="img/icons/map.svg" alt="map">
+    <span>On map</span>
+  </a>
+
+</nav>
+<section class="galleryContainer">
+  <div class="gallery">
+  <div class="post first">
+    <a href="#" class="postLink">
+    <img src="img/pictures/first.jpg" alt="first">
+    </a>
+  </div>
+  <div class="post second">
+    <a href="#" class="postLink">
+    <img src="img/pictures/second.jpg" alt="second">
+    </a>
+  </div>
+  <div class="post third">
+    <a href="#" class="postLink">
+    <img src="img/pictures/third.jpg" alt="third">
+    </a>
+  </div>
+  <div class="post forth">
+    <a href="#" class="postLink">
+    <img src="img/pictures/forth.jpg" alt="forth">
+    </a>
+  </div>
+  <div class="post fifth">
+    <a href="#" class="postLink">
+    <img src="img/pictures/fifth.jpg" alt="fifth">
+    </a>
+  </div>
+  <div class="post sixth">
+    <a href="#" class="postLink">
+    <img src="img/pictures/sixth.jpg" alt="sixth">
+    </a>
+  </div>
+  <div class="post seventh">
+    <a href="#" class="postLink">
+    <img src="img/pictures/seventh.jpg" alt="seventh">
+    </a>
+  </div>
+  <div class="post eight">
+    <a href="#" class="postLink">
+    <img src="img/pictures/eighth.jpg" alt="eighth">
+    </a>
+  </div>
+  <div class="post ninth">
+    <a href="#" class="postLink">
+    <img src="img/pictures/ninth.jpg" alt="ninth">
+    </a>
+  </div>
+  </div>
+</section>
+<footer>
+  <ul class="linksList">
+    <li><a href="#" class="links">About us</a></li>
+    <li><a href="#" class="links">Terms of use</a></li>
+    <li><a href="#" class="links">Privacy</a></li>
+    <li><a href="#" class="links">Help</a></li>
+  </ul>
+</footer>
+</body>
+</html>

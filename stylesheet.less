@@ -4,17 +4,134 @@
 }
 
 html, body {
-  background-color: #F7FAFD;
+  font-family: 'Roboto', sans-serif;
+  background-color: #ECF0F3;
   height: 100%;
+
+}
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  .openedPostDiv {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(53, 48, 65, 0.42);
+    .openedPost {
+      padding: 20px;
+      display: grid;
+      grid-gap: 10px;
+      grid-template-columns: 1fr 2fr;
+      background: #F7FAFD;
+      width: 70%;
+      position: fixed;
+      height: content-box;
+      box-shadow: 23px 31px 66px #88828D;
+      border-radius: 25px;
+      .photoAndActionsContainer {
+        .actionsContainer {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          align-self: center;
+          .likes {
+
+            .likeButton {
+              background-color: transparent;
+              background-image: url("img/icons/favorite_border_24px.svg");
+              width: 35px;
+              height: 35px;
+              border: 0;
+            }
+          }
+          .actions {
+            .sendButton {
+              background-image: url("img/icons/sendbutton.svg");
+              width: 35px;
+              height: 35px;
+              background-color: transparent;
+              border: 0;
+            }
+            .bookmark {
+              background-image: url("img/icons/bookmark.svg");
+              background-repeat: no-repeat;
+              width: 35px;
+              height: 35px;
+              background-color: transparent;
+              border: 0;
+            }
+          }
+        }
+      }
+      .descriptionAndComments {
+
+        display: grid;
+        grid-template-rows: 2fr 1fr;
+        .commentsSection {
+          h1 {
+            color: #7D288B;
+            font-size: 30px;
+          }
+          .allComments {
+
+          }
+          form {
+            border-radius: 5px;
+            border: 2px solid #B5B5D5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            textarea {
+              font-size: 15px;
+              resize: none;
+              height: 40%;
+              width: 70%;
+              background: transparent;
+              border: 0;
+              box-sizing: border-box;
+              border-radius: 5px;
+            }
+            .send {
+              font-weight: bold;
+              font-size: 12px;
+              align-self: flex-start;
+              border: 0;
+              background: transparent;
+            }
+          }
+
+        }
+        .usersDescription {
+
+          .user {
+            display: flex;
+            align-items: center;
+            .avatar {
+              background-image: url("img/icons/user 1.svg");
+              background-size: contain;
+              background-repeat: no-repeat;
+              width: 50px;
+              height: 50px;
+              margin-right: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-header {
-  background: #F7FAFD;
-  box-shadow: 35px 28px 32px #D2D8E4;
+
+.headerFeed {
   width: 100%;
   height: 300px;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
 
   .logo {
     margin: 20px;
@@ -46,6 +163,7 @@ header {
       padding-left: 15px;
       border: 3px solid #CFCDFF;
       border-radius: 15px;
+      box-sizing: border-box;
     }
     button {
       border: none;
@@ -58,7 +176,6 @@ header {
     }
     button:before {
       content: "\f002";
-      font-family: FontAwesome;
       font-size: 16px;
       color: #F9F0DA;
     }
@@ -73,38 +190,45 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 250px;
-      height: 160px;
-      border-radius: 15%;
+      width: 120px;
+      height: 120px;
+      border-radius: 100%;
+      border: 2px;
+      border-image: linear-gradient(90deg, #CFCDFF 19.83%, #7C288B 88.27%);
       p {
         color: white;
-        font-size: 20px;
-      }
-
-      .someContrast {
-        color: black;
+        font-size: 15px;
       }
     }
 
-    .user1 {
+      .user1 {
       background-image: url("img/pictures/001.png");
-      background-size: contain;
+      background-size: cover;
 
     }
 
-    .user2 {
+      .user2 {
       background-image: url("img/pictures/002.png");
       background-size: cover;
 
 
     }
 
-    .user3 {
+      .user3 {
       background-image: url("img/pictures/003.png");
       background-size: cover;
 
 
     }
+
+      .user4 {
+        background-image: url("img/pictures/004.jpg");
+        background-size: cover;
+      }
+      .user5 {
+        background-image: url("img/pictures/005.jpg");
+        background-size: cover;
+      }
   }
 }
   .userCorner {
@@ -120,7 +244,7 @@ header {
       border-radius: 100%;
       width: 150px;
       height: 150px;
-      img {
+      .iconPlus {
         position: absolute;
         bottom: 0;
         width: 60px;
@@ -130,12 +254,8 @@ header {
   }
 }
 .feed {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1 0 auto;
-  flex-direction: column;
-  min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
   .menu {
     position: fixed;
     top: 310px;
@@ -154,17 +274,16 @@ header {
 
   }
   .publication {
+    grid-column: e('2 / 3');
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
     background: #F7FAFD;
     box-shadow: 35px 28px 32px #D2D8E4, -32px -40px 57px #FFFFFF;
     border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    min-height: 500px;
-    margin: 50px 0 50px 0;
     .user {
-      margin: 3% 0 0 3%;
       display: flex;
+      margin: 3% 0 0 3%;
       .userName {
         color: #242045;
         align-self: center;
@@ -179,11 +298,11 @@ header {
       }
     }
     .pictureBox {
-      padding: 30px;
+
       display: flex;
+      padding: 30px;
       .picture {
         display: flex;
-
         .picturePhoto {
           margin: auto;
           width: 70%;
@@ -209,11 +328,13 @@ header {
     .description {
       width: 65%;
       align-self: center;
+      margin: 10px;
       .userNameDescription {
         font-size: 20px;
       }
       .textDescription {
-        font-size: 20px;
+        font-weight: 300;
+        font-size: 18px;
       }
     }
     .actionsContainer {
@@ -250,8 +371,9 @@ header {
       }
     }
     .commentSection {
+      margin-bottom: 20px;
+      align-self: center;
       width: 65%;
-      align-self:center;
 .commentsButton {
   background-image: url("img/icons/comments.svg");
   width: 35px;
@@ -282,6 +404,195 @@ footer {
       text-decoration: none;
       color: white;
       font-size: 20px;
+    }
+  }
+}
+
+.personalPageHeader {
+  height: max-content;
+  padding: 2%;
+  display: grid;
+  grid-template-columns: 2fr 2fr 3fr;
+  .leftColumn {
+    justify-self: center;
+    .userDiv {
+      .userPicture {
+        background-image: url("img/icons/user 1.svg");
+        background-size: contain;
+        width: 180px;
+        height: 180px;
+        background-repeat: no-repeat;
+        position: relative;
+        .plusIcon {
+          position: absolute;
+          bottom: 0;
+          width: 60px;
+          height: 60px;
+
+        }
+      }
+    }
+    .uploadPhoto {
+      margin: 20% 0 10% 0;
+      color: white;
+      font-size: 15px;
+      width: 169px;
+      height: 38px;
+      background: linear-gradient(90deg, #CFCDFF 19.83%, #7C288B 88.27%);
+      border-radius: 20px;
+    }
+    .userList {
+      width: 100%;
+      list-style-type: none;
+    .userListPoints {
+      width: 100%;
+      .userLinks {
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+      .titleList {
+        color: #7D288B;
+      }
+        .numbersList {
+          color: #979797;
+        }
+      }
+    }
+    }
+    }
+  .centralColumn {
+    display: grid;
+    grid-template-rows: 0.5fr 2fr 2fr;
+    .nickname {
+     color: #7D288B;
+    }
+.descriptionAndSettings {
+  display: flex;
+  .settingsIcon {
+    background-color: transparent;
+    border: none;
+    .settingsImg {
+      width: 45px;
+      height: 45px;
+    }
+  }
+}
+  }
+  .rightColumn {
+    justify-self: end;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    .logoImage {
+      background-image: url("img/pictures/logoms.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 180px;
+      height: 180px;
+
+    }
+    .iconsMenu {
+      .menuList {
+        list-style-type: none;
+        .menuLi {
+          line-height: 25px;
+          .icons {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+  }
+.navigation {
+  border-bottom: 2px solid #CFCDFF;
+  display: flex;
+  justify-content: space-around;
+  .navigationLinks {
+    border-bottom: 2px solid #7D288B;
+    width: 10%;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+  }
+}
+.galleryContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+.gallery {
+  width: 70%;
+  margin: 3% 0 5% 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27%, 1fr));
+  grid-gap: 1rem;
+  .post {
+    width: 100%;
+    height: 100%;
+    .postLink {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  }
+}
+}
+
+.publicationPage {
+  margin-bottom: 5%;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  .firstColumn {
+    justify-self: center;
+    .postContainer {
+      .headerOfPost {
+        margin: 3% 0 3% 0;
+        .userHeader {
+          width: 55%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        .userNickname {
+          color: #7C288B;
+        }
+        .avatar {
+          background-image: url("img/icons/user 1.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 60px;
+          height: 60px;
+        }
+
+        }
+      }
+      .postBody {
+        .pictureOfThePost {
+          .postImage {
+            border-radius: 15px;
+          }
+        }
+      }
+    }
+  }
+  .secondColumn{
+    display: flex;
+    justify-self: end;
+    margin: 5% 5% 0 0;
+    .logo{
+      background-image: url("img/pictures/logoms.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 160px;
+      height: 160px;
+    }
+    .menu {
+      .menuList {
+        list-style-type: none;
+      }
     }
   }
 }
